@@ -1,0 +1,122 @@
+Indian Sign Language (ISL) Recognition Project
+=======================================
+
+Project Overview
+---------------
+This project implements a real-time Indian Sign Language recognition system using Convolutional Neural Networks (CNN). The system can recognize 36 different signs including numbers (0-9) and alphabets (A-Z) through a webcam feed.
+
+Technology Stack
+---------------
+1. TensorFlow/Keras: Deep learning framework for model creation and training
+2. OpenCV: For image processing and webcam handling
+3. NumPy: For numerical computations and array operations
+4. Matplotlib: For visualization of training metrics
+5. CUDA/GPU Acceleration: Utilizing NVIDIA RTX 3050 for faster training
+
+Project Structure
+----------------
+1. dataset_collection.py
+   - Purpose: Collect and organize training data
+   - Features:
+     * Real-time webcam feed for data collection
+     * Saves both color and grayscale images
+     * Organized folder structure for each class
+     * Interactive data collection interface
+
+2. train.py
+   - Purpose: Train the CNN model
+   - Key Components:
+     * Data preprocessing and augmentation
+     * CNN architecture implementation
+     * Training process with GPU acceleration
+     * Model evaluation and metrics plotting
+     * Model saving for later use
+
+3. predict.py
+   - Purpose: Real-time sign language recognition
+   - Features:
+     * Real-time webcam processing
+     * ROI (Region of Interest) extraction
+     * Confidence-based prediction
+     * Visual feedback and display
+
+Model Architecture
+-----------------
+The CNN model consists of:
+- 3 Convolutional layers with ReLU activation
+- MaxPooling layers for dimensionality reduction
+- Dropout layer (0.5) for preventing overfitting
+- Dense layers for final classification
+- Softmax activation for multi-class prediction
+
+Optimization Features
+--------------------
+1. GPU Utilization:
+   - CUDA acceleration for faster training
+   - Memory growth management for optimal GPU usage
+
+2. Resource Management:
+   - Batch processing to manage memory usage
+   - Image preprocessing optimization
+   - Efficient data loading pipeline
+
+3. Performance Improvements:
+   - Data normalization for better convergence
+   - Dropout for regularization
+   - Learning rate optimization
+
+Execution Flow
+-------------
+1. Data Collection:
+   - Run dataset_collection.py
+   - Collect images for each sign
+   - Organize data in the dataset folder
+
+2. Training:
+   - Run train.py
+   - Data preprocessing
+   - Model training
+   - Save trained model and metrics
+
+3. Prediction:
+   - Run predict.py
+   - Real-time webcam feed
+   - Continuous sign recognition
+
+Best Practices Implemented
+-------------------------
+1. Code Organization:
+   - Modular structure
+   - Clear separation of concerns
+   - Reusable components
+
+2. Error Handling:
+   - Webcam availability checks
+   - Model loading verification
+   - Input validation
+
+3. Performance Optimization:
+   - GPU memory management
+   - Efficient data processing
+   - Resource utilization optimization
+
+4. Documentation:
+   - Detailed comments
+   - Clear function descriptions
+   - Usage instructions
+
+Usage Instructions
+-----------------
+1. Install dependencies:
+   pip install -r requirements.txt
+
+2. Collect dataset:
+   python dataset_collection.py
+
+3. Train model:
+   python train.py
+
+4. Run prediction:
+   python predict.py
+
+Note: Ensure CUDA and appropriate drivers are installed for GPU acceleration.
